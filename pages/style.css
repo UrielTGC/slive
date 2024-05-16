@@ -14,15 +14,17 @@ body{
 }
 
 .main {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: #ac4343;
-    max-height: 420px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 7px 7px 10px 3px #24004628;
-  }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #ac4343;
+  max-width: 600px; /* Ajustar el ancho máximo */
+  width: 80%; /* Ajustar el ancho en dispositivos más pequeños */
+  max-height: 580px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 7px 7px 10px 3px #24004628;
+}
   
   .form {
     display: flex;

@@ -48,97 +48,97 @@ a{
 }
 
 .popup {
-    --burger-line-width: 1.125em;
-    --burger-line-height: 0.125em;
-    --burger-offset: 0.625em;
-    --burger-bg: rgba(0, 0, 0, .15);
-    --burger-color: #ffffff;
-    --burger-line-border-radius: 0.1875em;
-    --burger-diameter: 2.125em;
-    --burger-btn-border-radius: calc(var(--burger-diameter) / 2);
-    --burger-line-transition: .3s;
-    --burger-transition: all .1s ease-in-out;
-    --burger-hover-scale: 1.1;
-    --burger-active-scale: .95;
-    --burger-enable-outline-color: var(--burger-bg);
-    --burger-enable-outline-width: 0.125em;
-    --burger-enable-outline-offset: var(--burger-enable-outline-width);
-    /* nav */
-    --nav-padding-x: 0.25em;
-    --nav-padding-y: 0.625em;
-    --nav-border-radius: 0.375em;
-    --nav-border-color: #fcfcfc;
-    --nav-border-width: 0.0625em;
-    --nav-shadow-color: rgba(0, 0, 0, .2);
-    --nav-shadow-width: 0 1px 5px;
-    --nav-bg: #000000;
-    --nav-font-family: Menlo, Roboto Mono, monospace;
-    --nav-default-scale: .8;
-    --nav-active-scale: 1;
-    --nav-position-left: 0;
-    --nav-position-right: unset;
-    /* if you want to change sides just switch one property */
-    /* from properties to "unset" and the other to 0 */
-    /* title */
-    --nav-title-size: 1.0em;
-    --nav-title-color: #fffdfd;
-    --nav-title-padding-x: 1rem;
-    --nav-title-padding-y: 1rem;
-    /* nav button */
-    --nav-button-padding-x: 1rem;
-    --nav-button-padding-y: 0.375em;
-    --nav-button-border-radius: 0.375em;
-    --nav-button-font-size: 20px;
-    --nav-button-hover-bg: #6495ed;
-    --nav-button-hover-text-color: #fff;
-    --nav-button-distance: 0.875em;
-    /* underline */
-    --underline-border-width: 0.0625em;
-    --underline-border-color: #ccc;
-    --underline-margin-y: 0.3125em;
-  }
+  --burger-line-width: 1.125em;
+  --burger-line-height: 0.125em;
+  --burger-offset: 0.625em;
+  --burger-bg: rgba(0, 0, 0, .15);
+  --burger-color: #ffffff;
+  --burger-line-border-radius: 0.1875em;
+  --burger-diameter: 2.125em;
+  --burger-btn-border-radius: calc(var(--burger-diameter) / 2);
+  --burger-line-transition: .3s;
+  --burger-transition: all .1s ease-in-out;
+  --burger-hover-scale: 1.1;
+  --burger-active-scale: .95;
+  --burger-enable-outline-color: var(--burger-bg);
+  --burger-enable-outline-width: 0.125em;
+  --burger-enable-outline-offset: var(--burger-enable-outline-width);
+  /* nav */
+  --nav-padding-x: 0.25em;
+  --nav-padding-y: 0.625em;
+  --nav-border-radius: 0.375em;
+  --nav-border-color: #fcfcfc;
+  --nav-border-width: 0.0625em;
+  --nav-shadow-color: rgba(0, 0, 0, .2);
+  --nav-shadow-width: 0 1px 5px;
+  --nav-bg: #000000;
+  --nav-font-family: Menlo, Roboto Mono, monospace;
+  --nav-default-scale: .8;
+  --nav-active-scale: 1;
+  --nav-position-left: 0;
+  --nav-position-right: unset;
+  /* if you want to change sides just switch one property */
+  /* from properties to "unset" and the other to 0 */
+  /* title */
+  --nav-title-size: 1.0em;
+  --nav-title-color: #fffdfd;
+  --nav-title-padding-x: 1rem;
+  --nav-title-padding-y: 1rem;
+  /* nav button */
+  --nav-button-padding-x: 1rem;
+  --nav-button-padding-y: 0.375em;
+  --nav-button-border-radius: 0.375em;
+  --nav-button-font-size: 20px;
+  --nav-button-hover-bg: #6495ed;
+  --nav-button-hover-text-color: #fff;
+  --nav-button-distance: 0.875em;
+  /* underline */
+  --underline-border-width: 0.0625em;
+  --underline-border-color: #ccc;
+  --underline-margin-y: 0.3125em;
+}
+/* popup settings 👆 */
+
+
+.popup {
+  display: inline-block;
+  text-rendering: optimizeLegibility;
+  position: relative;
+}
+
+.popup input {
+  display: none;
+}
   
-  /* popup settings 👆 */
+.burger {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: var(--burger-bg);
+  width: var(--burger-diameter);
+  height: var(--burger-diameter);
+  border-radius: var(--burger-btn-border-radius);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--burger-transition);
+  outline: var(--burger-enable-outline-width) solid transparent;
+  outline-offset: 0;
+}
   
-  .popup {
-    display: inline-block;
-    text-rendering: optimizeLegibility;
-    position: relative;
-  }
+.burger span {
+  height: var(--burger-line-height);
+  width: var(--burger-line-width);
+  background: var(--burger-color);
+  border-radius: var(--burger-line-border-radius);
+  position: absolute;
+  transition: var(--burger-line-transition);
+}
   
-  .popup input {
-    display: none;
-  }
-  
-  .burger {
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    background: var(--burger-bg);
-    width: var(--burger-diameter);
-    height: var(--burger-diameter);
-    border-radius: var(--burger-btn-border-radius);
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    transition: var(--burger-transition);
-    outline: var(--burger-enable-outline-width) solid transparent;
-    outline-offset: 0;
-  }
-  
-  .burger span {
-    height: var(--burger-line-height);
-    width: var(--burger-line-width);
-    background: var(--burger-color);
-    border-radius: var(--burger-line-border-radius);
-    position: absolute;
-    transition: var(--burger-line-transition);
-  }
-  
-  .burger span:nth-child(1) {
-    top: var(--burger-offset);
-  }
+.burger span:nth-child(1) {
+  top: var(--burger-offset);
+}
   
   .burger span:nth-child(2) {
     bottom: var(--burger-offset);
@@ -262,13 +262,13 @@ a{
 
   /*---------------- login---------------*/
 
+
   .services{
-    padding: 0 0 120px 0;
+    padding: 0 0 10px 0;
     text-align: center;
 }
 
 .services-content{
-    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 30px;
@@ -285,22 +285,20 @@ a{
 }
 
 .services-1:hover{
-    background: linear-gradient(120deg,
-    rgb(33, 138, 1)0%,
-    rgb(148, 5, 0)100%
+    background: linear-gradient(180deg,
+    rgb(51, 255, 0)0%,
+    rgb(255, 8, 0)100%
     );
 }
 
 .services-1 img{
     width: 400px;
-    margin-bottom: 10px;
 }
 
 .services-1 h3{
     color: #fdfeff;
     margin-bottom: 15px;
 }
-
 
 @media(max-width:991px){
 
@@ -310,12 +308,25 @@ a{
   }
 
   .services{
-      padding: 0 30px 30px 30px;
+    padding: 30px 30px; /* Reducir el padding horizontal */
   }
 
   .services-content{
-      margin-top: 30px;
-      grid-template-columns: repeat(1, 1fr);
+    margin-top: 30px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .services-1 {
+    margin-right: 15px; /* Añadir un margen derecho para separar los elementos */
+  }
+
+  .services-1:last-child {
+    margin-right: 0; /* Eliminar el margen derecho del último elemento */
+  }
+
+  .services-1 img{
+    max-width: 100%; /* Ajustar el ancho máximo de la imagen */
   }
 
 }
+
